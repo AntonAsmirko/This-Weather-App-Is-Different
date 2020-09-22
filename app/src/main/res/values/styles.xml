@@ -1,0 +1,19 @@
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/trans</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorControlNormal">@color/gray_dark</item>
+    </style>
+    <style name="AppTheme.TimeSpaceChooseChip"
+        parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="AppTheme.MyChip" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipSurfaceColor">@color/chip_background</item>
+        <item name="android:textColor">@color/chip_text_color</item>
+        <item name="android:textAppearance">@style/AppTheme.TimeSpaceChooseChip</item>
+
+    </style>
+</resources>
