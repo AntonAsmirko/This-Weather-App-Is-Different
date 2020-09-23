@@ -7,11 +7,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weather.adapters.HourCardAdapter
 import com.example.weather.data.HourCard
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var hoursRecycler: RecyclerView
+    private var isLight = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,5 +48,15 @@ class MainActivity : AppCompatActivity() {
             HourCard("11PM", R.drawable.snow, "-2\u02DAC")
         )
         hoursRecycler.adapter = HourCardAdapter(hoursCardList, this)
+        change_theme.setOnClickListener {
+            if(isLight){
+                isLight = false
+                application.setTheme(R.style.AppTheme_Dark)
+            } else {
+                isLight = true
+                application.setTheme(R.style.AppTheme)
+            }
+            recreate()
+        }
     }
 }

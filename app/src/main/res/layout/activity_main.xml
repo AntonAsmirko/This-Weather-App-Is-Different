@@ -327,4 +327,15 @@
         app:layout_constraintTop_toTopOf="@+id/autoCompleteTextView"
         app:srcCompat="@drawable/ic_baseline_search_24" />
 
+    <Switch
+        android:id="@+id/change_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="change theme"
+        app:layout_constraintBottom_toTopOf="@+id/chipGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/current_temperature" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
