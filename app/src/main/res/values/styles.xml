@@ -6,6 +6,11 @@
         <item name="colorOnSurface">@color/white</item>
         <item name="colorControlNormal">@color/gray_dark</item>
     </style>
+    <style name="AppTheme.Dark">
+        <item name="colorPrimaryDark">#122484</item>
+        <item name="colorAccent">#061047</item>
+        <item name="colorOnSurface">#05135B</item>
+    </style>
     <style name="AppTheme.TimeSpaceChooseChip"
         parent="TextAppearance.MaterialComponents.Chip">
         <item name="android:textSize">18sp</item>
