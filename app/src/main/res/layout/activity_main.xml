@@ -326,7 +326,8 @@
         android:paddingStart="10dp"
         app:layout_constraintBottom_toTopOf="@+id/current_temperature"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/chipGroup"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:layout_constraintVertical_chainStyle="spread"
@@ -346,7 +347,7 @@
         app:srcCompat="@drawable/ic_baseline_search_24" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/switch_mode"
         android:layout_width="40dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/autoCompleteTextView"

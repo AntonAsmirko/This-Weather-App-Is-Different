@@ -1,10 +1,12 @@
 package com.example.weather.activities
 
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.weather.GlobalState
 import com.example.weather.R
 import com.example.weather.adapters.HourCardAdapter
 import com.example.weather.data.HourCard
@@ -14,14 +16,18 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var hoursRecycler: RecyclerView
-    private var isLight = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         hoursRecycler = findViewById(R.id.hoursRecycler)
         hoursRecycler.scrollBarSize = 0
-        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        val orientation = resources.configuration.orientation
+        val layoutManager = LinearLayoutManager(
+            this,
+            if (orientation == Configuration.ORIENTATION_LANDSCAPE) LinearLayoutManager.VERTICAL else LinearLayoutManager.HORIZONTAL,
+            false
+        )
         hoursRecycler.layoutManager = layoutManager
         val hoursCardList = listOf(
             HourCard("1AM", R.drawable.cloudy, "4\u02DAC"),
@@ -49,8 +55,14 @@ class MainActivity : AppCompatActivity() {
             HourCard("11PM", R.drawable.snow, "-2\u02DAC")
         )
         hoursRecycler.adapter = HourCardAdapter(hoursCardList, this)
-        chip1.setOnClickListener {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        switch_mode.setOnClickListener {
+            if (GlobalState.currentTheme == GlobalState.Theme.LIGHT) {
+                GlobalState.currentTheme = GlobalState.Theme.DARK
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            } else {
+                GlobalState.currentTheme = GlobalState.Theme.LIGHT
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
         }
     }
 }
