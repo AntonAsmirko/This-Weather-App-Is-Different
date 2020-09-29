@@ -9,10 +9,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
         android:background="@color/trans"
-        android:src="@drawable/shesh"
+        android:src="@drawable/main_img"
         app:layout_constraintBottom_toBottomOf="@+id/current_temperature"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -32,7 +32,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/display_town_text_view"
         app:layout_constraintVertical_bias="0.47000003"
-        app:layout_constraintVertical_weight="10">
+        app:layout_constraintVertical_weight="10"
+        app:singleSelection="true">
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip1"
@@ -310,7 +311,7 @@
         android:textSize="80sp"
         app:layout_constraintBottom_toTopOf="@+id/display_town_text_view"
         app:layout_constraintEnd_toStartOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.77"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@id/autoCompleteTextView"
         app:layout_constraintVertical_bias="0.100000024"
@@ -354,5 +355,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/autoCompleteTextView"
         app:layout_constraintTop_toTopOf="@+id/autoCompleteTextView"
-        app:srcCompat="@drawable/night" />
+        app:srcCompat="@drawable/switch_img" />
 </androidx.constraintlayout.widget.ConstraintLayout>

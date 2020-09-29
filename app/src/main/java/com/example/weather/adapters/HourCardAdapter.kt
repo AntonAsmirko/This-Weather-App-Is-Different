@@ -13,13 +13,21 @@ import com.example.weather.R
 import com.example.weather.data.HourCard
 
 
-class HourCardAdapter(private val hourCardList: List<HourCard>, private val context: Context) :
+class HourCardAdapter(
+    private val hourCardList: List<HourCard>,
+    private val context: Context,
+    private val isVertical: Boolean
+) :
     RecyclerView.Adapter<HourCardAdapter.HourHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HourCardAdapter.HourHolder {
         val context: Context = parent.context
         val inflater = LayoutInflater.from(context)
-        val view = inflater.inflate(R.layout.hour_holder_layout, parent, false)
+        val view = inflater.inflate(
+            if (isVertical) R.layout.hour_holder_layout else R.layout.hour_holder_landscape,
+            parent,
+            false
+        )
         return HourHolder(view)
     }
 
@@ -41,7 +49,7 @@ class HourCardAdapter(private val hourCardList: List<HourCard>, private val cont
 
         fun setData(time: String, img: Int, temperature: String) {
             itemView.setOnClickListener {
-                setPadding(0)
+                setPadding(if (isVertical) 0 else 20)
             }
             timeData.text = time
             image.setImageBitmap(BitmapFactory.decodeResource(context.resources, img))
@@ -52,8 +60,12 @@ class HourCardAdapter(private val hourCardList: List<HourCard>, private val cont
             val scale: Float = context.resources.displayMetrics.density
             val dpAsPixels = (sizeInDp * scale + 0.5f).toInt()
 
-            val linearLayoutParams =
-                LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, dpAsPixels)
+            val linearLayoutParams = if (isVertical) LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                dpAsPixels
+            ) else LinearLayout.LayoutParams(
+                dpAsPixels,
+                ViewGroup.LayoutParams.WRAP_CONTENT)
             dummyView.layoutParams = linearLayoutParams
         }
     }

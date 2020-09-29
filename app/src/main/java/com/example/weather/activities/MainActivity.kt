@@ -54,15 +54,24 @@ class MainActivity : AppCompatActivity() {
             HourCard("10PM", R.drawable.snowy, "-1\u02DAC"),
             HourCard("11PM", R.drawable.snow, "-2\u02DAC")
         )
-        hoursRecycler.adapter = HourCardAdapter(hoursCardList, this)
+        hoursRecycler.adapter =
+            HourCardAdapter(hoursCardList, this, orientation == Configuration.ORIENTATION_PORTRAIT)
         switch_mode.setOnClickListener {
             if (GlobalState.currentTheme == GlobalState.Theme.LIGHT) {
-                GlobalState.currentTheme = GlobalState.Theme.DARK
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                setNightTheme()
             } else {
-                GlobalState.currentTheme = GlobalState.Theme.LIGHT
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                setDayTheme()
             }
         }
+    }
+
+    private fun setDayTheme() {
+        GlobalState.currentTheme = GlobalState.Theme.LIGHT
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+    }
+
+    private fun setNightTheme() {
+        GlobalState.currentTheme = GlobalState.Theme.DARK
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
     }
 }

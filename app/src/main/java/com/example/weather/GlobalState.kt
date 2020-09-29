@@ -5,10 +5,5 @@ object GlobalState {
         DARK, LIGHT
     }
 
-    enum class Orientation{
-        HORIZONTAL, VERTICAL
-    }
-
     var currentTheme = Theme.LIGHT
-    var orientation = Orientation.VERTICAL
 }
