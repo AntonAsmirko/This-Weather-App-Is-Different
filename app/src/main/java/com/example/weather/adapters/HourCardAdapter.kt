@@ -5,12 +5,13 @@ import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weather.R
 import com.example.weather.data.HourCard
+
 
 class HourCardAdapter(private val hourCardList: List<HourCard>, private val context: Context) :
     RecyclerView.Adapter<HourCardAdapter.HourHolder>() {
@@ -36,11 +37,24 @@ class HourCardAdapter(private val hourCardList: List<HourCard>, private val cont
         private val timeData = itemView.findViewById<TextView>(R.id.hour_time)
         private val image = itemView.findViewById<ImageView>(R.id.hour_image)
         private val temperature = itemView.findViewById<TextView>(R.id.hour_temperature)
+        private val dummyView = itemView.findViewById<View>(R.id.dummyView)
 
         fun setData(time: String, img: Int, temperature: String) {
+            itemView.setOnClickListener {
+                setPadding(0)
+            }
             timeData.text = time
             image.setImageBitmap(BitmapFactory.decodeResource(context.resources, img))
             this.temperature.text = temperature
+        }
+
+        fun setPadding(sizeInDp: Int) {
+            val scale: Float = context.resources.displayMetrics.density
+            val dpAsPixels = (sizeInDp * scale + 0.5f).toInt()
+
+            val linearLayoutParams =
+                LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, dpAsPixels)
+            dummyView.layoutParams = linearLayoutParams
         }
     }
 }

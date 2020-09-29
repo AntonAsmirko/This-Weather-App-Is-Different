@@ -1,0 +1,6 @@
+green
+blue
+trans
+white
+gray
+gray_dark

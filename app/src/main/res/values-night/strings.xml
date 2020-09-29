@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="today">Today</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="this_week">This week</string>
+    <string name="temperature_main_example">17\u02DAC</string>
+    <string name="temperature_range_low_example">15˚C</string>
+    <string name="temperature_range_high_example">17˚C</string>
+</resources>

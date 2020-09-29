@@ -1,10 +1,11 @@
-package com.example.weather
+package com.example.weather.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.weather.R
 import com.example.weather.adapters.HourCardAdapter
 import com.example.weather.data.HourCard
 import kotlinx.android.synthetic.main.activity_main.*
@@ -48,15 +49,8 @@ class MainActivity : AppCompatActivity() {
             HourCard("11PM", R.drawable.snow, "-2\u02DAC")
         )
         hoursRecycler.adapter = HourCardAdapter(hoursCardList, this)
-        change_theme.setOnClickListener {
-            if(isLight){
-                isLight = false
-                application.setTheme(R.style.AppTheme_Dark)
-            } else {
-                isLight = true
-                application.setTheme(R.style.AppTheme)
-            }
-            recreate()
+        chip1.setOnClickListener {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         }
     }
 }

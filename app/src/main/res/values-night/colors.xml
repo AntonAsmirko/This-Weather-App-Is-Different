@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#00D5F1</color>
-    <color name="colorPrimaryDark">#03DAC5</color>
-    <color name="colorAccent">#8BC34A</color>
+    <color name="colorPrimary">#132596</color>
+    <color name="colorPrimaryDark">#000935</color>
+    <color name="colorAccent">#0B247F</color>
     <color name="trans">#00000000 </color>
     <color name="white">#FFFFFF</color>
     <color name="gray">#AFAFAF</color>
@@ -11,5 +11,5 @@
     <color name="bottomSheetGrayDark">#646464</color>
     <color name="textInLayout">#FFFFFF</color>
     <color name="search">#FFFFFF</color>
-    <color name="recyclerItem">#FFFFFF</color>
+    <color name="recyclerItem">#0024EF</color>
 </resources>
