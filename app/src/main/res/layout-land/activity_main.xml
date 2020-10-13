@@ -75,7 +75,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/hoursRecycler"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:overScrollMode="never"
         android:scrollbars="horizontal"
@@ -302,19 +302,6 @@
         app:layout_constraintVertical_bias="0.0"
         app:layout_constraintVertical_weight="10" />
 
-    <TextView
-        android:id="@+id/display_town_text_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Your town"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextView"
-        app:layout_constraintVertical_bias="0.13"
-        app:layout_constraintVertical_weight="10" />
 
     <TextView
         android:id="@+id/current_temperature"

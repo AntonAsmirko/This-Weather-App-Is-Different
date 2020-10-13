@@ -48,9 +48,9 @@
                 android:id="@+id/hour_temperature"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="30dp"
                 android:layout_marginStart="10dp"
+                android:layout_marginTop="27dp"
+                android:layout_marginEnd="10dp"
                 android:text="KEK"
                 android:textAlignment="center"
                 android:textSize="18sp" />

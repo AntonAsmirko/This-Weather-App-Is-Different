@@ -1,5 +1,6 @@
 package com.example.weather.adapters
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.BitmapFactory
 import android.view.LayoutInflater
@@ -56,7 +57,7 @@ class HourCardAdapter(
             this.temperature.text = temperature
         }
 
-        fun setPadding(sizeInDp: Int) {
+        private fun setPadding(sizeInDp: Int) {
             val scale: Float = context.resources.displayMetrics.density
             val dpAsPixels = (sizeInDp * scale + 0.5f).toInt()
 
